@@ -24,11 +24,32 @@ const { readFile, readFileSync} = require('fs');
 // EVERY FILE IN NODE IS A MODULE
 // a module is an encapsualted code ( only share the minimum)
 
-const names = require('./names')
-const sayHello = require('./utils')
-const shopdata = require('./alternative-module')
-console.log(shopdata);
 
-sayHello("Nishant");
-sayHello(names.kumar);
-sayHello(names.virat);
+
+
+// Built in modules ->  modules which are buil inside node and helps us to develop applications
+ // FS -> file system
+ // PATH -
+ // OS 
+ //HTTP
+
+
+ // OS -> a lot of built in methods which allows us to interact with out operating system
+ const os = require('os');
+
+ // info about the current user
+ const user = os.userInfo();
+ console.log(user);
+
+ //method that returns sytem uptime in seconds 
+ console.log(`The system Uptime is ${os.uptime()} seconds`);
+
+ const currentOS = {
+    name : os.type(),
+    release : os.release(),
+    totalMemory : os.totalmem(),
+    freeMemory : os.freemem()
+ }
+
+ console.log(currentOS);
+ 
