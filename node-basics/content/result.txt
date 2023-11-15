@@ -1,0 +1,3 @@
+Here is the result from the files firts and second : 
+hello this is the first.txt file hello this is the second.txt fileHere is the result from the files firts and second : 
+hello this is the first.txt file hello this is the second.txt file

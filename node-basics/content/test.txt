@@ -1,0 +1,8 @@
+You wish to report a technical issue with IRCC online services. Please select 'Technical Difficulty' as your application/enquiry type and ensure you provide:
+type of application (work permit, study permit or visitor record, etc) in the 'Your enquiry' field;
+approximate date that the application was submitted, if applicable, in the 'Your enquiry' field.
+complete address (including the postal code) in the 'Your enquiry' field. If the residential address is different from the mailing address, please provide both addresses;
+Unique Client Identifier (UCI) number / Client ID number, if you have one;
+online application reference number, if you have one;
+telephone number. If you have more than one contact number, please provide them all;
+screenshot(s), if possible.
