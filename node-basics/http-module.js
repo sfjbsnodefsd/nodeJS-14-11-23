@@ -5,7 +5,7 @@ const server = http.createServer((req, res) => {
   // res.write("Welcome to our home page")
   // res.end()
   if (req.url === "/") {
-    res.end("Welcome to our home page");
+    res.end("Welcome to our home page Nishant today is a good day");
   }
   if (req.url === "/about") {
     res.end("WElcome to the about page");
