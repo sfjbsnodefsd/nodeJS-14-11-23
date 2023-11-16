@@ -1,0 +1,1 @@
+Result: First file data. Second file data.
