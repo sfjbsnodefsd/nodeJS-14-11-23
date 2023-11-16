@@ -1,8 +1,12 @@
 const express = require('express')
-const app = express()
 const mongoose = require('mongoose')
-// mongoose.connect()
 require("dotenv").config();
+const userRouter = require('./routes/users')
+const bodyParser =require('body-parser')
+
+const app = express()
+app.use(bodyParser.json())
+app.use(userRouter)
 
 app.get("/", (req,res) =>{
     res.send("Hello, this is NodeJS Rest API App.")

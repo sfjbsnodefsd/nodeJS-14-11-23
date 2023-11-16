@@ -16,7 +16,7 @@ const User = mongoose.Schema({
         require: true
 
     },
-    active:true
+    active:Boolean
 })
 
 module.exports = mongoose.model("users", User);
