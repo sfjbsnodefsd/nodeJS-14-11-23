@@ -25,12 +25,19 @@ router.get("/allusers", async (req, res) => {
 });
 
 // delete a user
-router.delete("/delete/:userId", async (req, res) => {
+router.delete("/delete/:id", async (req, res) => {
   try {
-    await User.remove({_id:req.params.userID});
-    res.status(200).json({
-      message: "User deleted successfully!",
-    });
+      const {id} =req.params
+      const user = await User.findByIdAndDelete(id);
+      if(!user) {
+        return res.status(404).json({message: `cannot find any user with the id ${id}`})
+      }
+      res.status(200).json(user)
+
+    // await User.remove({_id:req.params.userID});
+    // res.status(200).json({
+    //   message: "User deleted successfully!",
+    // });
   } catch (err) {
     console.log(err);
   }
