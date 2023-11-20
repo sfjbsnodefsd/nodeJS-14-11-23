@@ -31,3 +31,12 @@ router.route("/order/:id").get((req,res) => {
         res.json(result[0])
     })
 })
+
+
+// to add a order into the database
+router.route("/addorder").post((req,res) => {
+    let order = {...req.body}
+    dboperations.addOrder(order).then(result => {
+        res.status(201).json(result);
+    })
+})

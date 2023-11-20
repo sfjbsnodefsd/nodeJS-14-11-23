@@ -27,7 +27,25 @@ async function getOrder(orderId) {
     }
 }
 
+async function addOrder(order) {
+    try {
+        let pool = await sql.connect(config);
+        let insertProduct = await pool.request()
+        .input("Id", sql.NChar, order.Id)
+        .input("Title",sql.NVarChar,order.Title)
+        .input("Quantity",sql.Numeric,order.Quantity)
+        .input("Message",sql.NVarChar,order.Message)
+        .input("City",sql.NVarChar,order.City)
+        .query("INSERT INTO Products.dbo.Orders (Id, Title, Quantity, Message, City) VALUES (@Id, @Title, @Quantity,  @Message, @City);")
+        return insertProduct.recordset;
+
+    }  catch (err) {
+        console.log(err);
+    }
+}
+
 module.exports = {
     getOrders : getOrders,
-    getOrder : getOrder
+    getOrder : getOrder,
+    addOrder : addOrder
 }
