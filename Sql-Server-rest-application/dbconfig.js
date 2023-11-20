@@ -1,14 +1,24 @@
+var Connection = require('tedious').Connection;
 const config = {
-  user: "root",
-  password: "root123",
-  server: "127.0.0.1",
+  user: "sa",
+  password: "root",
+  server: "localhost",
   database: "Products",
   options: {
     trustedconnection: true,
-    enableArithAort: true,
-    instanceName: "SQLEXPRESS",
+    enableArithAbort: true,
+    instanceName: "sqlexpress",
   },
   port: 55892,
 };
+
+var connection = new Connection(config);
+connection.on('connect', function(err) {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('Connected');
+  }
+});
 
 module.exports = config;
