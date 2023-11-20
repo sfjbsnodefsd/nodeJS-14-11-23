@@ -14,6 +14,20 @@ async function getOrders() {
     }
 }
 
+//write a function to get an order by id 
+async function getOrder(orderId) {
+    try {
+        let pool = await sql.connect(config);
+        let product = await pool.request()
+        .input("input_parameter", sql.Int, orderId)
+        .query("SELECT * FROM Orders where Id = @input_parameter")
+        return product.recordsets;
+    } catch(err) {
+        console.log(err);
+    }
+}
+
 module.exports = {
-    getOrders : getOrders
+    getOrders : getOrders,
+    getOrder : getOrder
 }

@@ -2,18 +2,32 @@ var Order = require("./order");
 const dboperations = require("./dboperations");
 const express = require("express");
 const bodyParser = require("body-parser");
-var cors = require('cors');
+var cors = require("cors");
 var app = express();
-var router = express.Router()
+var router = express.Router();
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
-app.use("/api",router)
+app.use("/api", router);
 app.listen(5000);
 console.log("Order API is running on port 5000");
 
+router.use((req, res, next) => {
+  console.log("middleware");
+  next();
+});
+ // to get all orders in our api 
+router.route("/orders").get((req, res) => {
+  dboperations.getOrders().then((results) => {
+    res.json(results[0])
+  });
+});
 
-dboperations.getOrders().then(results => {
-    console.log(results);
+// to get an order by id using api 
+
+router.route("/order/:id").get((req,res) => {
+    dboperations.getOrder(req.params.id).then(result => {
+        res.json(result[0])
+    })
 })
