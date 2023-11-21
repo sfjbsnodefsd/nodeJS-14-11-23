@@ -58,9 +58,28 @@ async function deleteOrder(orderId) {
     }
 }
 
+async function updateOrder(order) {
+    try {
+        let pool = await sql.connect(config);
+        let updateProduct = await pool.request()
+        .input("Id", sql.NChar, order.Id)
+        .input("Title",sql.NVarChar,order.Title)
+        .input("Quantity",sql.Numeric,order.Quantity)
+        .input("Message",sql.NVarChar,order.Message)
+        .input("City",sql.NVarChar,order.City)
+        .query("UPDATE Orders SET Title=@Title, Quantity =@Quantity, Message = @Message, City= @City  WHERE Id=@Id")
+        return updateProduct.recordset;
+
+
+    }  catch (err) {
+        console.log(err);
+    }
+}
+
 module.exports = {
     getOrders : getOrders,
     getOrder : getOrder,
     addOrder : addOrder,
-    deleteOrder : deleteOrder
+    deleteOrder : deleteOrder,
+    updateOrder : updateOrder
 }

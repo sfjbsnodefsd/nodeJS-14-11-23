@@ -40,3 +40,19 @@ router.route("/addorder").post((req,res) => {
         res.status(201).json(result);
     })
 })
+
+
+//to delete order by id
+router.route("/delorder/:id").delete((req,res) => {
+    dboperations.deleteOrder(req.params.id).then(result => {
+        res.json(result[0])
+    })
+})
+
+// api to update an order
+router.route("/updateorder").put((req,res) => {
+    let order = {...req.body}
+    dboperations.updateOrder(order).then(result => {
+        res.status(200).json(result);
+    })
+})
