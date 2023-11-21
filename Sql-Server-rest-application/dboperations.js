@@ -5,11 +5,11 @@ const sql = require("mssql");
 // write a function to get a list of all products
 async function getOrders() {
     try{
-        let pool = await sql.connect(config);
-        let products = await pool.request().query("SELECT * FROM Orders");
-        return products.recordsets;
+        let pool = await sql.connect(config); // connecting to the database first
+        let products = await pool.request().query("SELECT * FROM Orders"); // we will send the request and the query
+        return products.recordsets; // we will return the response form the running query 
     }
-    catch (err) {
+    catch (err) { // log the error if any issue
         console.log(err);
     }
 }
@@ -19,7 +19,7 @@ async function getOrder(orderId) {
     try {
         let pool = await sql.connect(config);
         let product = await pool.request()
-        .input("input_parameter", sql.Int, orderId)
+        .input("input_parameter", sql.Int, orderId) 
         .query("SELECT * FROM Orders where Id = @input_parameter")
         return product.recordsets;
     } catch(err) {
@@ -44,8 +44,23 @@ async function addOrder(order) {
     }
 }
 
+
+async function deleteOrder(orderId) {
+    try {
+        let pool = await sql.connect(config);
+        let deleteproduct = await pool.request()
+        .input("id", sql.Int, orderId) 
+        .query("DELETE FROM Products.dbo.Orders WHERE Id = @id")
+        return deleteproduct.output;
+
+    } catch(err) {
+        console.log(err);
+    }
+}
+
 module.exports = {
     getOrders : getOrders,
     getOrder : getOrder,
-    addOrder : addOrder
+    addOrder : addOrder,
+    deleteOrder : deleteOrder
 }

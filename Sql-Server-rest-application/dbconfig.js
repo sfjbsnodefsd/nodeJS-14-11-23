@@ -12,13 +12,5 @@ const config = {
   port: 55892,
 };
 
-var connection = new Connection(config);
-connection.on('connect', function(err) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log('Connected');
-  }
-});
 
 module.exports = config;
