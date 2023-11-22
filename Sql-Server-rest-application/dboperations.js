@@ -71,10 +71,13 @@ async function updateOrder(order) {
         return updateProduct.recordset;
 
 
-    }  catch (err) {
+    }  catch (err) { 
         console.log(err);
     }
 }
+
+// where you look for order for specific quantities
+
 
 module.exports = {
     getOrders : getOrders,
