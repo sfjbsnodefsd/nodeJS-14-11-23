@@ -35,6 +35,28 @@ app.post("/auth/reg", async (req,res) => {
         return res.json(newUser);
     }
 })
+// to login using email and the password 
+app.post("/auth/login" , async(req,res) => {
+    const {email, password} = req.body;
+
+    const user = await User.findOne({email});
+    if(!user) {
+        return res.json({sucess : 0, message:"User dose not exists with this email"});
+    } else {
+        if (password !== user.password) {
+            return res.json({sucess:0, message :"Incorrect password"});
+        } const payload = {
+            email, name: user.name
+        };
+        jwt.sign(payload, "secret", (err, token) => {
+            if(err) console.log(err);
+            else {
+                return res.json({token:token})
+            }
+        })
+    }
+})
+
 
 app.listen(PORT, () => {
     console.log(`Auth service running at port ${PORT}`);

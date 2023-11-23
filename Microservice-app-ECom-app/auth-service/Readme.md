@@ -9,3 +9,13 @@ Body Application/JSON
     "email":"xyz@email.com",
     "password":"admin123"
 }
+
+
+To login 
+URL  http://localhost:5000/auth/login
+Method post
+Body Application/JSON
+{
+    "email":"xyz@email.com",
+    "password":"admin123"
+}
