@@ -1,0 +1,34 @@
+{
+	"info": {
+		"_postman_id": "d747695a-98e5-442f-a05d-b7c713955002",
+		"name": "product-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31193464"
+	},
+	"item": [
+		{
+			"name": "create-new-product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inh5ekBlbWFpbC5jb20iLCJuYW1lIjoiTmlzaGFudCIsImlhdCI6MTcwMDgwNTcxMH0.7Gy1Rm19n7H-1Mb3mXFinUatslzE1ke3Oy1RlVC_nyI"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"LG tv\",\r\n    \"description\":\"55 inch 4k tv\",\r\n    \"price\":10000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:6000/product/create"
+			},
+			"response": []
+		}
+	]
+}

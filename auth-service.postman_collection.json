@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "1c8bc235-61de-4f35-8ecc-fd019399329b",
+		"name": "auth-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31193464",
+		"_collection_link": "https://lunar-shuttle-299604.postman.co/workspace/New-Team-Workspace~dabb233f-6f47-42d9-9c22-982471a0c561/collection/31193464-1c8bc235-61de-4f35-8ecc-fd019399329b?action=share&source=collection_link&creator=31193464"
+	},
+	"item": [
+		{
+			"name": "register a new user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Nishant\",\r\n    \"email\":\"xyz@email.com\",\r\n    \"password\":\"admin123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/auth/reg"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
