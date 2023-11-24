@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "7296a8cb-7d6d-4bdd-bb29-812628ee8293",
+		"name": "SQL-server-nodeJS-APi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31193464"
+	},
+	"item": [
+		{
+			"name": "get order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:5000/api/order/109"
+			},
+			"response": []
+		},
+		{
+			"name": "add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Id\":\"109\",\r\n    \"Title\" :\"Washing machines\",\r\n    \"Quantity\" : \"25\",\r\n    \"Message\":\"Boash and IFB laptops available\",\r\n    \"City\":\"Bangalore\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/addorder"
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:5000/api/delorder/109"
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Id\":\"109\",\r\n    \"Title\" :\"Microwave\",\r\n    \"Quantity\" : \"30\",\r\n    \"Message\":\"LG and IFB Microwave available\",\r\n    \"City\":\"Pune\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/updateorder"
+			},
+			"response": []
+		}
+	]
+}

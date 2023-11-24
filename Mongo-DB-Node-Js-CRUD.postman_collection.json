@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "c4ea5dd4-928a-4e16-9272-04ca1a2bbc68",
+		"name": "Mongo-DB-Node-Js-CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31193464"
+	},
+	"item": [
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:4000"
+			},
+			"response": []
+		},
+		{
+			"name": "save user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"vikram\",\r\n    \"city\":\"hyd\",\r\n    \"email\":\"xyz2@gmail.com\",\r\n    \"active\":true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4000/adduser"
+			},
+			"response": []
+		},
+		{
+			"name": "get all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:4000/allusers"
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "http://localhost:4000/delete/6555bcd1035c1e5be14db32d"
+			},
+			"response": []
+		},
+		{
+			"name": "findById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:4000/finduser/6555bce0035c1e5be14db32f"
+			},
+			"response": []
+		},
+		{
+			"name": "update user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Kishore\",\r\n    \"city\":\"Mumbai\",\r\n    \"email\":\"xyz5@gmail.com\",\r\n    \"active\":true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4000/updateuser/6555bce0035c1e5be14db32f"
+			},
+			"response": []
+		}
+	]
+}
